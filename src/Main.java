@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Parser parser = new Parser();
-        Solver solver = new Solver();
         Scanner scan = new Scanner(System.in);
         String problem = "";
 
@@ -17,7 +16,9 @@ public class Main {
             ArrayList<Float> nums = numsAndOperators.get(1);
             ArrayList<String> operators = numsAndOperators.get(0);
 
-            solver.solve(nums, operators);
+            Solver solver = new Solver(nums, operators);
+
+            solver.solve();
 
             System.out.println(nums.toString());
         }
